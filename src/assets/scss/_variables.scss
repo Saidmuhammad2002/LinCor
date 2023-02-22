@@ -1,0 +1,10 @@
+//colors
+$main-blue: blue;
+
+//mixins
+@mixin font($weight: "400", $size: "16px", $lh: "16px", $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  color: $color;
+}
