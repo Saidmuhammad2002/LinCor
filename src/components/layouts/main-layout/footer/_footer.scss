@@ -1,0 +1,91 @@
+@import "../../../../assets/scss/variables";
+
+.footer {
+  &-wrapper {
+    padding-inline: 40px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 774px;
+    padding-block: 64px;
+
+    &__left {
+      display: flex;
+      align-items: flex-start;
+      gap: 38px;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__link {
+      font-family: "Poppins";
+      @include font(500, 16px, 24px, #1a1a1a);
+      text-transform: capitalize;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__heading {
+      margin: 0 0 8px;
+      font-family: "Poppins";
+      @include font(700, 24px, 24px, #1a1a1a);
+      text-transform: capitalize;
+      color: #1a1a1a;
+    }
+
+    &__link {
+      @include font(400, 16px, 24px, #5c5c5c);
+      text-transform: capitalize;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 21px;
+    border-top: 1px solid #cccccc;
+
+    &__right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 638px;
+      width: 100%;
+    }
+
+    &__socials {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &__phone {
+    font-family: "Poppins";
+    @include font(500, 20px, 24px, #5c5c5c);
+    text-transform: capitalize;
+
+    &--marked {
+      @include font(600, 20px, 24px, #1a1a1a);
+    }
+  }
+
+  &__socials {
+    display: block;
+  }
+}
