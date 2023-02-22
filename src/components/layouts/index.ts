@@ -1,1 +1,1 @@
-export const initialize = true;
+export * from "./main-layout";
