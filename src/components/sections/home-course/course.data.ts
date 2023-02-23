@@ -5,7 +5,7 @@ export default [
       "siz yigirma beshtadan darslarni olasiz yigirma beshtadan ortiq darslarni olasiz",
     link: "/courses/videos?l=m",
     imgLink: "arrow-blue.svg",
-    linkColor: "blue",
+    linkColor: "#1D68F9",
   },
   {
     title: "O'rta",
