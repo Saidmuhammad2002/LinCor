@@ -4,6 +4,7 @@ import {
   HomeTopics,
   HomeVideo,
   Line,
+  OurCenter,
 } from "../../components";
 import "./_home.scss";
 
@@ -16,6 +17,8 @@ export const Home: React.FC = () => {
       <HomeVideo />
       <Line />
       <HomeTopics />
+      <Line />
+      <OurCenter />
       <Line />
     </>
   );
