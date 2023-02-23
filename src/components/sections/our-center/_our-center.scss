@@ -1,0 +1,32 @@
+@import "../../../assets/scss/variables";
+
+.our-center {
+  &-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px 0 40px 40px;
+  }
+
+  &__left {
+    max-width: 341px;
+  }
+
+  &__heading {
+    margin: 0;
+    font-family: "Poppins";
+    @include font(00, 56px, 64px, #1a1a1a);
+  }
+
+  &__text {
+    margin: 24px 0 0;
+    font-family: "Poppins";
+    @include font(400, 18px, 24px, #5c5c5c);
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
