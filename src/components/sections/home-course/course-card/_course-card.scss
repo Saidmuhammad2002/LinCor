@@ -1,0 +1,43 @@
+@import "../../../../assets/scss/variables";
+
+.home-card {
+  background-color: $main-blue;
+  padding: 40px;
+  border-radius: 20px;
+
+  &__heading {
+    margin: 0;
+    font-family: "Poppins";
+    @include font(700, 32px, 40px, $white);
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin: 8px 0 64px;
+    font-family: "Poppins";
+    @include font(400, 16px, 24px, #f5f5f5);
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    background-color: $white;
+    font-family: "Poppins";
+    @include font(500, 16px, 15px, $main-blue);
+    border-radius: 28px;
+
+    & > img {
+      transition: all 340ms linear;
+    }
+
+    &:hover > img {
+      transform: rotate(180deg);
+    }
+  }
+}

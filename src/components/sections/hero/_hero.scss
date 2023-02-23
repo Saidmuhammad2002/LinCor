@@ -3,7 +3,7 @@
 .hero {
   &-wrapper {
     padding: 48px 0 180px 40px;
-    background-color: blue;
+    background-color: $main-blue;
     border-radius: 20px;
     background: {
       image: url("../../../assets/img/hero-girl.png");
@@ -36,7 +36,7 @@
     padding: 4px 4px 4px 28px;
     background-color: #ffffff;
     font-family: "Poppins";
-    @include font(500, 16px, 16px, #1d68f9);
+    @include font(500, 16px, 16px, $main-blue);
     border-radius: 40px;
   }
 }

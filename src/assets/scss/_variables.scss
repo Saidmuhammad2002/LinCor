@@ -1,5 +1,11 @@
 //colors
-$main-blue: blue;
+$white: #ffffff;
+$main-blue: #1d68f9;
+$main-black: #1a1a1a;
+$secondary-black: #5c5c5c;
+$main-orange: #fa4229;
+$main-gray: #f5f5f5;
+$secondary-gray: #ebebeb;
 
 //mixins
 @mixin font($weight: "400", $size: "16px", $lh: "16px", $color) {
