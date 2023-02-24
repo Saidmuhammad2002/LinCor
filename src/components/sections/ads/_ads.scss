@@ -1,0 +1,51 @@
+@import "../../../assets/scss/variables";
+
+.ads {
+  &-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px 0 64px 40px;
+    border-radius: 20px;
+    background-color: $white;
+  }
+
+  &__left {
+    max-width: 339px;
+    width: 100%;
+  }
+
+  &__heading {
+    margin: 0;
+    font-family: "Poppins";
+    @include font(800, 56px, 64px, #1a1a1a);
+  }
+
+  &__text {
+    margin: 24px 0 48px;
+    font-family: "Poppins";
+    @include font(400, 16px, 24px, #5c5c5c);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    background-color: $main-blue;
+    font-family: "Poppins";
+    @include font(500, 16px, 16px, $white);
+    border-radius: 28px;
+  }
+
+  &__right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+
+    & > img:nth-child(4) {
+      transform: rotateY(180deg);
+    }
+  }
+}
