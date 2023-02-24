@@ -5,6 +5,7 @@ import {
   HomeVideo,
   Line,
   OurCenter,
+  Teachers,
 } from "../../components";
 import "./_home.scss";
 
@@ -19,6 +20,8 @@ export const Home: React.FC = () => {
       <HomeTopics />
       <Line />
       <OurCenter />
+      <Line />
+      <Teachers />
       <Line />
     </>
   );
