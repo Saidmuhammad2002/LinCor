@@ -1,4 +1,5 @@
 import {
+  Ads,
   Hero,
   HomeCourse,
   HomeTopics,
@@ -22,6 +23,8 @@ export const Home: React.FC = () => {
       <OurCenter />
       <Line />
       <Teachers />
+      <Line />
+      <Ads />
       <Line />
     </>
   );
