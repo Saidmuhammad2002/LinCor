@@ -3,3 +3,4 @@ export * from "./home-course";
 export * from "./home-video";
 export * from "./home-topics";
 export * from "./our-center";
+export * from "./teachers";
