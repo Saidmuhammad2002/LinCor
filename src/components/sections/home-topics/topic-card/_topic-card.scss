@@ -21,13 +21,13 @@
   &__heading {
     margin: 0;
     font-family: "Poppins";
-    @include font(700, 48px, 56px, $main-orange);
+    @include font(700, 48px, 56px, $main-blue);
   }
 
   &__text {
     margin: 8px 0 20px;
     font-family: "Poppins";
-    @include font(400, 16px, 24px, $main-orange);
+    @include font(400, 16px, 24px, $main-blue);
   }
 
   &__video {
