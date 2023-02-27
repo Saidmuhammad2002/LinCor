@@ -7,6 +7,7 @@ import {
   Line,
   OurCenter,
   Teachers,
+  Tips,
 } from "../../components";
 import "./_home.scss";
 
@@ -25,6 +26,8 @@ export const Home: React.FC = () => {
       <Teachers />
       <Line />
       <Ads />
+      <Line />
+      <Tips />
       <Line />
     </>
   );
