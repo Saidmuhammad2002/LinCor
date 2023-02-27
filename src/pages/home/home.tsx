@@ -1,5 +1,6 @@
 import {
   Ads,
+  Contact,
   Hero,
   HomeCourse,
   HomeTopics,
@@ -28,6 +29,8 @@ export const Home: React.FC = () => {
       <Ads />
       <Line />
       <Tips />
+      <Line />
+      <Contact />
       <Line />
     </>
   );
