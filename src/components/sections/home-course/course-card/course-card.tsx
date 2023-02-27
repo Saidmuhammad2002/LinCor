@@ -23,7 +23,7 @@ export const CourseCard: React.FC<props> = ({ course }) => {
         style={{ color: course.linkColor }}
       >
         Boshladik
-        <img src={course.imgLink} alt="" />
+        {/* <img src={course.imgLink} alt="" /> */}
       </Link>
     </div>
   );
