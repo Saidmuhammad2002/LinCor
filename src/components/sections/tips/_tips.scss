@@ -1,0 +1,48 @@
+@import "../../../assets/scss/variables";
+
+.tips {
+  &-wrapper {
+    padding: 64px 0 34px 40px;
+    background-color: $main-gray;
+    border-radius: 20px;
+  }
+
+  &__heading {
+    margin: 0 0 30px;
+    font-family: "Poppins";
+    @include font(800, 56px, 64px, $main-black);
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 34px;
+    padding-right: 40px;
+  }
+
+  &__prev,
+  &__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47.5px;
+    height: 44px;
+    background-color: $white;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__prev {
+    border-right: 1px solid #ebebeb;
+    border-radius: 44px 0 0 44px;
+  }
+
+  &__next {
+    border-radius: 0px 44px 44px 0px;
+
+    & > img {
+      transform: rotate(180deg);
+    }
+  }
+}

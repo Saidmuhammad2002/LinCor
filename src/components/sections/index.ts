@@ -5,3 +5,4 @@ export * from "./home-topics";
 export * from "./our-center";
 export * from "./teachers";
 export * from "./ads";
+export * from "./tips";
