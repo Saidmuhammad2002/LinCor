@@ -6,3 +6,4 @@ export * from "./our-center";
 export * from "./teachers";
 export * from "./ads";
 export * from "./tips";
+export * from "./contact";
