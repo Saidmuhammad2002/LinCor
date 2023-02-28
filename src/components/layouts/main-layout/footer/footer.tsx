@@ -106,7 +106,11 @@ export const Footer: React.FC = () => {
                   E-mail: examplry@gmail.com
                 </a>
                 <div className="footer__download">
-                  <a href="https://app-store.com">
+                  <a
+                    href="https://www.apple.com/app-store/"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
                     <img
                       className="footer__download__img"
                       src={appStore}
@@ -115,7 +119,11 @@ export const Footer: React.FC = () => {
                       alt="App Store"
                     />
                   </a>
-                  <a href="https://google-play.com">
+                  <a
+                    href="https://play.google.com/store/games?hl=ru&gl=US"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
                     <img
                       className="footer__download__img"
                       src={googlePlay}
