@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import instaIcon from "../../../../assets/img/footer-insta.svg";
 import fbIcon from "../../../../assets/img/footer-facebook.svg";
 import tgIcon from "../../../../assets/img/footer-tg.svg";
+import appStore from "../../../../assets/img/appstore.svg";
+import googlePlay from "../../../../assets/img/googleplay.svg";
 import "./_footer.scss";
 
 export const Footer: React.FC = () => {
@@ -28,8 +30,8 @@ export const Footer: React.FC = () => {
                       className="footer__socials"
                       src={instaIcon}
                       alt="Instagram"
-                      width={48}
-                      height={48}
+                      width={24}
+                      height={24}
                     />
                   </a>
                   <a
@@ -42,8 +44,8 @@ export const Footer: React.FC = () => {
                       className="footer__socials"
                       src={fbIcon}
                       alt="Facebook"
-                      width={48}
-                      height={48}
+                      width={12}
+                      height={24}
                     />
                   </a>
                   <a
@@ -56,8 +58,8 @@ export const Footer: React.FC = () => {
                       className="footer__socials"
                       src={tgIcon}
                       alt="Telegram"
-                      width={48}
-                      height={48}
+                      width={24}
+                      height={20}
                     />
                   </a>
                 </div>
@@ -103,9 +105,26 @@ export const Footer: React.FC = () => {
                 >
                   E-mail: examplry@gmail.com
                 </a>
-                <Link className="footer__item__link" to="">
-                  EPS-Topik Google Play Apple Store rasmlari shu yerda turadi
-                </Link>
+                <div className="footer__download">
+                  <a href="https://app-store.com">
+                    <img
+                      className="footer__download__img"
+                      src={appStore}
+                      width={180}
+                      height={52}
+                      alt="App Store"
+                    />
+                  </a>
+                  <a href="https://google-play.com">
+                    <img
+                      className="footer__download__img"
+                      src={googlePlay}
+                      width={180}
+                      height={52}
+                      alt="Google Play"
+                    />
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

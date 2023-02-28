@@ -67,6 +67,16 @@
     }
   }
 
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    &__img {
+      display: block;
+    }
+  }
+
   &__bottom {
     padding: 32px 0 33px 0;
     border-top: 1px solid #cccccc;
