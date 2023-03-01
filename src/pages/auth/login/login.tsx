@@ -3,12 +3,24 @@ import { Link } from "react-router-dom";
 import "./_login.scss";
 
 export const Login: React.FC = () => {
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
-  const [maskedValue, setMaskedValue] = useState("");
+  // const [maskedValue, setMaskedValue] = useState("");
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setPassword(e.target.value);
-    setMaskedValue(e.target.value.replace(/./g, "*"));
+    // setMaskedValue(e.target.value.replace(/./g, "*"));
+  };
+
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+
+    const body = {
+      phone_number: phone,
+      password,
+    };
+
+    console.log(body);
   };
 
   return (
@@ -19,17 +31,25 @@ export const Login: React.FC = () => {
       <Link to="/auth/register" className="login__link">
         Ro’yxatdan o’tish
       </Link>
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleSubmit}>
         <label className="login__label">
-          Telefon raqamingiz <input className="login__controls" type="text" />
+          Telefon raqamingiz{" "}
+          <input
+            className="login__controls"
+            onChange={(e) => setPhone(e.target.value)}
+            type="text"
+            required
+          />
         </label>
         <label className="login__label">
           Parol{" "}
           <input
             className="login__controls login__password"
-            type="text"
-            value={maskedValue}
+            type="password"
+            value={password}
             onChange={handleInputChange}
+            minLength={8}
+            required
           />
         </label>
         <Link className="login__reset" to="/">
