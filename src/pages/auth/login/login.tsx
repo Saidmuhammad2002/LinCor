@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./_login.scss";
 
 export const Login: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   // const [maskedValue, setMaskedValue] = useState("");
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -21,6 +22,7 @@ export const Login: React.FC = () => {
     };
 
     console.log(body);
+    navigate("/");
   };
 
   return (
