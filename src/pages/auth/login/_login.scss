@@ -1,0 +1,82 @@
+@import "../../../assets/scss/variables";
+
+.login {
+  max-width: 608px;
+  width: 100%;
+  margin: 124px auto;
+  padding: 40px;
+  background-color: $white;
+  border: 1px solid $secondary-gray;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+
+  &__logo {
+    margin: 0;
+    font-family: "Russo One";
+    @include font(400, 24px, 24px, #0550e0);
+  }
+
+  &__heading {
+    margin: 30px 0 10px;
+    font-family: "Poppins";
+    @include font(700, 40px, 48px, $main-black);
+  }
+
+  &__advice {
+    font-family: "Poppins";
+    @include font(400, 18px, 24px, $secondary-black);
+  }
+
+  &__link {
+    display: inline-block;
+    margin-left: 50px;
+    @include font(500, 18px, 24px, $main-blue);
+  }
+
+  &__form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: "Poppins";
+    @include font(400, 18px, 24px, #000000);
+
+    &:first-child {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__controls {
+    padding: 16px 0 16px 16px;
+    background-color: $white;
+    font-family: "Poppins";
+    @include font(400, 20px, 24px, $secondary-black);
+    border: 1px solid #aca4a4;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  &__reset {
+    display: inline-block;
+    margin: 10px 0 40px;
+    font-family: "Poppins";
+    @include font(400, 16px, 24px, $main-blue);
+  }
+
+  &__btn {
+    margin: 0;
+    padding-block: 16px;
+    background-color: $main-blue;
+    font-family: "Poppins";
+    @include font(400, 28px, 24px, $white);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
