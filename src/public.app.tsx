@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { MainLayout } from "./components/layouts";
-import { Home, Login } from "./pages";
+import { Home, Login, Register } from "./pages";
 
 export const Public: React.FC = () => {
   return (
@@ -14,6 +14,7 @@ export const Public: React.FC = () => {
         }
       />
       <Route path="/auth/login" element={<Login />} />
+      <Route path="/auth/register" element={<Register />} />
     </Routes>
   );
 };
