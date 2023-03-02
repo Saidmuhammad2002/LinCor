@@ -21,7 +21,7 @@ export const Register = () => {
     };
 
     console.log(body);
-    navigate("/profile");
+    navigate("/auth/user/verify");
   };
 
   return (
