@@ -1,64 +1,69 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./_login.scss";
+import "./_register.scss";
 
-export const Login: React.FC = () => {
+export const Register = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const navigate = useNavigate();
-  // const [maskedValue, setMaskedValue] = useState("");
-
-  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setPassword(e.target.value);
-    // setMaskedValue(e.target.value.replace(/./g, "*"));
-  };
-
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+
+    if (password !== repeatPassword) {
+      return alert("Parollar bir xil bo'lishi shart!");
+    }
 
     const body = {
       phone_number: phone,
       password,
+      repeatPassword,
     };
 
     console.log(body);
-    navigate("/");
+    navigate("/profile");
   };
 
   return (
     <div className="login">
       <h3 className="login__logo">LinCor</h3>
-      <h2 className="login__heading">Kirish</h2>
+      <h2 className="login__heading">Ro’yxatdan o’tish</h2>
       <span className="login__advice">Bizga qo’shiling!</span>
-      <Link to="/auth/register" className="login__link">
-        Ro’yxatdan o’tish
+      <Link className="login__link" to="/auth/login">
+        Kirish
       </Link>
+
       <form className="login__form" onSubmit={handleSubmit}>
         <label className="login__label">
-          Telefon raqamingiz{" "}
+          Telefon raqamingiz
           <input
             className="login__controls"
             onChange={(e) => setPhone(e.target.value)}
-            type="text"
+            type="tel"
             required
           />
         </label>
         <label className="login__label">
-          Parol{" "}
+          Parol
           <input
-            className="login__controls login__password"
+            className="login__controls"
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
-            value={password}
-            onChange={handleInputChange}
-            minLength={8}
             required
           />
         </label>
-        <Link className="login__reset" to="/">
-          Parolni unutdingizmi?
-        </Link>
-        <button className="login__btn" type="submit">
-          Kirish
+        <label className="login__label register__label">
+          Parolni takrorlang
+          <input
+            className="login__controls"
+            onChange={(e) => setRepeatPassword(e.target.value)}
+            type="password"
+            required
+          />
+        </label>
+
+        <button className="login__btn register__btn" type="submit">
+          Tasdiqlash
         </button>
       </form>
     </div>
