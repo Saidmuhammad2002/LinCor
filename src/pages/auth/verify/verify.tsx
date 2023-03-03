@@ -12,7 +12,7 @@ export const Verify = () => {
       <form className="login__form">
         <label className="login__label">
           Kodni kiriting
-          <input type="text" className="login__controls" />
+          <input type="text" className="login__controls" maxLength={5} />
           <button>Kodni qayta yuborish</button>
         </label>
       </form>
