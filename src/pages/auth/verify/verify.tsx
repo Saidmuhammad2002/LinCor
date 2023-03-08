@@ -4,9 +4,10 @@ import "./_verify.scss";
 
 interface props {
   phone: string;
+  setStep: () => void;
 }
 
-export const Verify: React.FC<props> = ({ phone }) => {
+export const Verify: React.FC<props> = ({ phone, setStep }) => {
   const [verificationCode, setVerificationCode] = useState<string>("");
 
   //timer logic
@@ -26,6 +27,8 @@ export const Verify: React.FC<props> = ({ phone }) => {
     };
 
     console.log(code);
+    localStorage.removeItem("expiryTimestamp");
+    setStep();
   };
 
   const handleResendVerificationCode = () => {
