@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import userIcon from "../../../../assets/img/header-user.svg";
+import { HeaderDropdown } from "./header-dropdown";
 import "./_header.scss";
 
 export const Header: React.FC = () => {
@@ -35,6 +36,7 @@ export const Header: React.FC = () => {
             <img src={userIcon} alt="User" width={20} height={20} />
             Kirish
           </Link>
+          <HeaderDropdown />
         </div>
       </div>
     </header>

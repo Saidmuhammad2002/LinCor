@@ -14,8 +14,8 @@ export const HomeCourse: React.FC = () => {
         </div>
 
         <div className="home-course__cards">
-          {courseData.map((course) => (
-            <CourseCard course={course} />
+          {courseData.map((course, index) => (
+            <CourseCard key={index} course={course} />
           ))}
         </div>
       </div>

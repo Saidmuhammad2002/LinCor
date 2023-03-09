@@ -5,7 +5,7 @@ import { RegisterStep1 } from "./step-1";
 import { RegisterStep3 } from "./step-3";
 import "./_register.scss";
 
-export const Register = () => {
+export const Register: React.FC = () => {
   const [phone, setPhone] = useState<string>(
     sessionStorage.getItem("phone") ? sessionStorage.getItem("phone") || "" : ""
   );

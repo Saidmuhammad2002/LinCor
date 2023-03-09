@@ -13,8 +13,8 @@ export const HomeTopics: React.FC = () => {
           </p>
 
           <div className="topics__cards">
-            {topicData.map((topic) => (
-              <TopicCard topic={topic} />
+            {topicData.map((topic, index) => (
+              <TopicCard key={index} topic={topic} />
             ))}
           </div>
         </div>
