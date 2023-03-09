@@ -9,13 +9,13 @@
 #root {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
+  // min-height: 130vh;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  font-family: "Poppins", "Russo One", sans-serif;
+  font-family: "Poppins", "Russo One", "Inter", sans-serif;
 }
 
 main.main {
