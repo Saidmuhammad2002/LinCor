@@ -1,0 +1,45 @@
+@import "../../assets/scss/variables";
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 88.5px 80px 150px;
+
+  &-wrapper {
+    max-width: 590px;
+  }
+
+  &__heading {
+    margin: 0;
+    font-family: "Inter";
+    @include font(700, 48px, 58px, $main-blue);
+    letter-spacing: 0.25px;
+  }
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  &__links {
+    padding: 18.5px 40px;
+    background-color: $main-blue;
+    font-family: "Inter";
+    @include font(700, 16px, 19px, $white);
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__status {
+    margin: 0;
+    font-family: "Inter";
+    @include font(700, 250px, 303px, $main-blue);
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+}
