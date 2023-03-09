@@ -10,7 +10,7 @@ export const RegisterStep3: React.FC = () => {
 
     const body = formData;
     console.log(body);
-    navigate("/profile");
+    navigate("/");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

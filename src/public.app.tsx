@@ -15,7 +15,6 @@ export const Public: React.FC = () => {
       />
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/register" element={<Register />} />
-      <Route path="/auth/verify-phone" element={<Verify />} />
     </Routes>
   );
 };
