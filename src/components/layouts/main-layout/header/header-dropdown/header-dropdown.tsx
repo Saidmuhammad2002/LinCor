@@ -42,7 +42,7 @@ export const HeaderDropdown: React.FC = () => {
             Profilim
             <img src={userIcon} width={22} height={22} alt="" />
           </Link>
-          <Link to="/my-courses" className="header-drop__link">
+          <Link to="/contact-us" className="header-drop__link">
             A'loqa
             <img src={phoneIcon} width={20} height={20} alt="" />
           </Link>
