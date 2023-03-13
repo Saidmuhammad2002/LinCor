@@ -1,0 +1,77 @@
+@import "../../assets/scss/variables";
+
+.contact-us {
+  padding: 40px 0 211px;
+
+  &__heading {
+    margin: 0;
+    font-family: "Poppins";
+    @include font(700, 56px, 64px, $main-black);
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin: 24px 0 40px;
+    @include font(400, 18px, 24px, $secondary-black);
+    color: #5c5c5c;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+    margin-bottom: 70px;
+  }
+
+  &__card {
+    padding: 40px 40px 74px 40px;
+    border-radius: 10px;
+
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 25px;
+    }
+
+    &__img {
+      order: -1;
+    }
+
+    &__heading {
+      margin: 0;
+      font-family: "Poppins";
+      @include font(600, 32px, 40px, $main-blue);
+    }
+
+    &__link {
+      font-family: "Poppins";
+      @include font(400, 20px, 24px, $main-black);
+      text-transform: capitalize;
+    }
+
+    &:hover {
+      background-color: $main-blue;
+    }
+
+    &:hover &__heading {
+      color: $white;
+    }
+
+    &:hover &__tel {
+      content: url("../../assets/img/contact-us-phone-hover.svg");
+    }
+
+    &:hover &__location {
+      content: url("../../assets/img/contact-us-location-hover.svg");
+    }
+
+    &:hover &__time {
+      content: url("../../assets/img/contact-us-time-hover.svg");
+    }
+
+    &:hover &__link {
+      color: $white;
+    }
+  }
+}
