@@ -7,3 +7,4 @@ export * from "./teachers";
 export * from "./ads";
 export * from "./tips";
 export * from "./contact";
+export * from "./my-courses-bottom";
