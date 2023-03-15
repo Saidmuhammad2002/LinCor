@@ -1,0 +1,82 @@
+@import "../../../../assets/scss/variables";
+
+.mc-card {
+  flex: 0 0 313px;
+  border-radius: 20px;
+
+  &__top {
+    padding: 156px 0 5px 20px;
+    background: {
+      image: url("../../../../assets/img/my-courses-default-bg.svg");
+      repeat: no-repeat;
+      position: center;
+      size: auto;
+      color: $main-blue;
+    }
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  &__heading {
+    margin: 0;
+    @include font(500, 24px, 32px, $white);
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5px 25px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 20px 20px;
+
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__center,
+  &__end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 0;
+    padding-right: 16px;
+  }
+
+  &__end {
+    padding-right: 15px;
+  }
+
+  &__video-count {
+    order: 1;
+    margin: 0;
+    @include font(500, 20px, 24px, $main-blue);
+    text-transform: capitalize;
+  }
+
+  &__bought-date,
+  &__deadline {
+    margin: 0;
+    @include font(400, 16px, 24px, $main-black);
+    text-transform: capitalize;
+  }
+
+  &__dates {
+    @include font(400, 14px, 18px, $secondary-black);
+    // text-transform: capitalize;
+    color: #5c5c5c;
+  }
+
+  &__link {
+    align-self: center;
+    margin-top: 30px;
+    margin-left: -20px;
+    padding: 14px 52px;
+    background-color: $main-blue;
+    @include font(500, 16px, 16px, $white);
+    border-radius: 20px;
+  }
+}

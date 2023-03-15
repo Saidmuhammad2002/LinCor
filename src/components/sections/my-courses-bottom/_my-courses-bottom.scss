@@ -1,0 +1,54 @@
+@import "../../../assets/scss/variables";
+
+.mc__bottom {
+  margin-bottom: 150px;
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    border-bottom: 2px solid #d9d9d9;
+  }
+
+  &__btn {
+    position: relative;
+    padding: 0 0 20px;
+    background-color: transparent;
+    font-family: "Poppins";
+    @include font(400, 20px, 16px, #000000);
+    border: none;
+    cursor: pointer;
+    transition: all 120ms linear;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      display: block;
+      width: calc(100% + 3px);
+      height: 2px;
+      background-color: $main-blue;
+      opacity: 0;
+      transition: all 550ms ease;
+    }
+
+    &--active {
+      //   font-weight: 500;
+      color: $main-blue;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__bottom {
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin-top: 40px;
+  }
+}
