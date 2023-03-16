@@ -1,0 +1,8 @@
+.courses {
+  &-wrapper {
+    display: flex;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    gap: 37px;
+  }
+}

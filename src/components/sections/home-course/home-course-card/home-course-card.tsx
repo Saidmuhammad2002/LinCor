@@ -11,7 +11,7 @@ interface props {
   };
 }
 
-export const CourseCard: React.FC<props> = ({ course }) => {
+export const HomeCourseCard: React.FC<props> = ({ course }) => {
   console.log(course.imgLink);
   return (
     <div className="home-card">

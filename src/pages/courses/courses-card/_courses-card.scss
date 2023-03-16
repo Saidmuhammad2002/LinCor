@@ -1,0 +1,50 @@
+@import "../../../assets/scss/variables";
+
+.courses-card {
+  max-width: 429px;
+  //   flex: 1 0 429px;
+  padding: 48px 56px 52px 40px;
+  background-color: $main-blue;
+  border-radius: 20px;
+
+  &__heading {
+    margin: 0;
+    @include font(700, 32px, 48px, $white);
+  }
+
+  &__description {
+    max-width: 326px;
+    margin: 8px 0 17px;
+    font-family: "Poppins";
+    @include font(400, 16px, 24px, $main-gray);
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+  }
+
+  &__video-count {
+    order: 1;
+    margin-left: 10px;
+    @include font(500, 20px, 24px, $white);
+    text-transform: capitalize;
+  }
+
+  &__price {
+    margin: 30px 0 15px;
+    @include font(700, 32px, 40px, $white);
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 14px 52px;
+    background-color: #ffffff;
+    @include font(500, 16px, 16px, $main-blue);
+    border-radius: 20px;
+  }
+}
