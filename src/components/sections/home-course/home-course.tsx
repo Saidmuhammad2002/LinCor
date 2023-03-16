@@ -1,4 +1,4 @@
-import { CourseCard } from "./course-card";
+import { HomeCourseCard } from "./home-course-card";
 import courseData from "./course.data";
 import "./_home-course.scss";
 
@@ -15,7 +15,7 @@ export const HomeCourse: React.FC = () => {
 
         <div className="home-course__cards">
           {courseData.map((course, index) => (
-            <CourseCard key={index} course={course} />
+            <HomeCourseCard key={index} course={course} />
           ))}
         </div>
       </div>
