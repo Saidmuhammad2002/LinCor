@@ -1,0 +1,69 @@
+import { useNavigate } from 'react-router-dom';
+import { z } from 'zod';
+import { useSignupMutation } from '../../authApiSlice';
+import { toast } from 'react-toastify';
+import cls from '../../login/_login.module.scss';
+
+export const RegisterStep3: React.FC = () => {
+  const navigate = useNavigate();
+  const [signup] = useSignupMutation();
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    try {
+      await formSchema.parseAsync(data);
+      await signup(data);
+      navigate('/register/step-2');
+    } catch (err) {
+      toast.error(
+        err instanceof z.ZodError // you can sow first error only using // err.errors[0].message
+          ? err.errors.map((error) => error.message).join('.\n')
+          : 'An error occurred while processing your request. Please try again later.'
+      );
+    }
+  };
+
+  return (
+    <div className={cls.login__wrapper}>
+      <div className={cls.login}>
+        <h3 className={cls.login__logo}>LinCor</h3>
+        <h2 className={cls.login__heading}>Profil</h2>
+        <span className={cls.login__advice}>Ma'lumotingizni kiriting</span>
+
+        <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
+          <label className={cls.login__label}>
+            Ismingiz
+            <input
+              className={cls.login__controls}
+              name="first_name"
+              type="text"
+              required
+            />
+          </label>
+          <label className={cls.login__label}>
+            Familiyangiz
+            <input
+              className={cls.login__controls}
+              name="last_name"
+              type="text"
+              required
+            />
+          </label>
+
+          <button
+            className={`${cls.login__btn} ${cls.register__btn}`}
+            type="submit"
+          >
+            Tasdiqlash
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const formSchema = z.object({
+  first_name: z.string().min(2).max(50),
+  last_name: z.string().min(2).max(50),
+});

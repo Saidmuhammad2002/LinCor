@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 interface props {
   expiryTimestamp: number;
@@ -12,7 +12,7 @@ export const Timer: React.FC<props> = ({
   warnAt = 10,
 }) => {
   const [timeLeft, setTimeLeft] = useState<number>(() => {
-    const storedExpiry = localStorage.getItem("expiryTimestamp");
+    const storedExpiry = localStorage.getItem('expiryTimestamp');
     const parsedExpiry = storedExpiry ? parseInt(storedExpiry, 10) : 0;
     return Math.max(0, Math.floor((parsedExpiry - Date.now()) / 1000));
   });
@@ -20,7 +20,7 @@ export const Timer: React.FC<props> = ({
   //timer logic here
   useEffect(() => {
     if (expiryTimestamp) {
-      const storedExpiry = localStorage.getItem("expiryTimestamp");
+      const storedExpiry = localStorage.getItem('expiryTimestamp');
       const parsedExpiry = storedExpiry ? parseInt(storedExpiry, 10) : 0;
 
       if (parsedExpiry && parsedExpiry > Date.now()) {
@@ -31,7 +31,7 @@ export const Timer: React.FC<props> = ({
           );
 
           if (newTimeLeft <= 0) {
-            localStorage.removeItem("expiryTimestamp");
+            localStorage.removeItem('expiryTimestamp');
             clearInterval(intervalId);
             onTimerComplete();
           } else {
@@ -41,7 +41,7 @@ export const Timer: React.FC<props> = ({
 
         return () => clearInterval(intervalId);
       } else {
-        localStorage.removeItem("expiryTimestamp");
+        localStorage.removeItem('expiryTimestamp');
       }
     }
   }, [expiryTimestamp, onTimerComplete]);
@@ -49,25 +49,25 @@ export const Timer: React.FC<props> = ({
   //store initial timestamp to storage
   useEffect(() => {
     if (expiryTimestamp) {
-      localStorage.setItem("expiryTimestamp", expiryTimestamp.toString());
+      localStorage.setItem('expiryTimestamp', expiryTimestamp.toString());
     }
   }, [expiryTimestamp]);
 
   const isWarnTime = timeLeft <= warnAt;
 
   if (timeLeft <= 0) {
-    localStorage.removeItem("expiryTimestamp");
+    localStorage.removeItem('expiryTimestamp');
   }
 
   return (
-    <span style={{ color: isWarnTime ? "red" : "black" }}>
+    <span style={{ color: isWarnTime ? 'red' : 'black' }}>
       {Math.floor(timeLeft / 60)
         .toString()
-        .padStart(2, "0")}
+        .padStart(2, '0')}
       :
-      {(timeLeft % 60).toString().padStart(2, "0") == "01"
-        ? "00"
-        : (timeLeft % 60).toString().padStart(2, "0")}
+      {(timeLeft % 60).toString().padStart(2, '0') == '01'
+        ? '00'
+        : (timeLeft % 60).toString().padStart(2, '0')}
     </span>
   );
 };

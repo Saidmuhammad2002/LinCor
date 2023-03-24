@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables";
+@import '../../assets/scss/variables';
 
 .my-courses {
   &__heading {
@@ -9,7 +9,7 @@
   &__content {
     margin-bottom: 40px;
     padding: 95px 40px 0;
-    background-image: url("../../assets/img/my-courses-bg.png");
+    background-image: url('../../assets/img/my-courses-bg.png');
     background-repeat: no-repeat;
     background-size: 100% 59%;
     background-position: top;

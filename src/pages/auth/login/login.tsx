@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./_login.scss";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './_login.module.scss';
 
 export const Login: React.FC = () => {
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   // const [maskedValue, setMaskedValue] = useState("");
 
@@ -22,7 +22,7 @@ export const Login: React.FC = () => {
     };
 
     console.log(body);
-    navigate("/");
+    navigate('/');
   };
 
   return (
@@ -35,7 +35,7 @@ export const Login: React.FC = () => {
       </Link>
       <form className="login__form" onSubmit={handleSubmit}>
         <label className="login__label">
-          Telefon raqamingiz{" "}
+          Telefon raqamingiz{' '}
           <input
             className="login__controls"
             onChange={(e) => setPhone(e.target.value)}
@@ -44,7 +44,7 @@ export const Login: React.FC = () => {
           />
         </label>
         <label className="login__label">
-          Parol{" "}
+          Parol{' '}
           <input
             className="login__controls login__password"
             type="password"

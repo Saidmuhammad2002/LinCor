@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .home-course {
   margin-top: 40px;
@@ -9,7 +9,7 @@
   }
   &__heading {
     margin: 0;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(800, 56px, 64px, #1a1a1a);
     text-transform: capitalize;
   }
@@ -17,7 +17,7 @@
   &__text {
     margin: 24px 0 64px;
     max-width: 339px;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 18px, 24px, #5c5c5c);
   }
 

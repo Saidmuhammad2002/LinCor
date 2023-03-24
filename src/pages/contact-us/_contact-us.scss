@@ -1,11 +1,11 @@
-@import "../../assets/scss/variables";
+@import '../../assets/scss/variables';
 
 .contact-us {
   padding: 40px 0 211px;
 
   &__heading {
     margin: 0;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(700, 56px, 64px, $main-black);
     text-transform: capitalize;
   }
@@ -40,12 +40,12 @@
 
     &__heading {
       margin: 0;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(600, 32px, 40px, $main-blue);
     }
 
     &__link {
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(400, 20px, 24px, $main-black);
       text-transform: capitalize;
     }
@@ -59,15 +59,15 @@
     }
 
     &:hover &__tel {
-      content: url("../../assets/img/contact-us-phone-hover.svg");
+      content: url('../../assets/img/contact-us-phone-hover.svg');
     }
 
     &:hover &__location {
-      content: url("../../assets/img/contact-us-location-hover.svg");
+      content: url('../../assets/img/contact-us-location-hover.svg');
     }
 
     &:hover &__time {
-      content: url("../../assets/img/contact-us-time-hover.svg");
+      content: url('../../assets/img/contact-us-time-hover.svg');
     }
 
     &:hover &__link {

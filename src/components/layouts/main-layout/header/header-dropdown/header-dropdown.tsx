@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import arrowDown from "../../../../../assets/img/header-arrow-down.svg";
-import bookIcon from "../../../../../assets/img/header-drop-book.svg";
-import paymentIcon from "../../../../../assets/img/header-drop-payment.svg";
-import userIcon from "../../../../../assets/img/header-drop-user.svg";
-import phoneIcon from "../../../../../assets/img/header-drop-phone.svg";
-import logoutIcon from "../../../../../assets/img/header-drop-logout.svg";
-import "./_header-dropdown.scss";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import arrowDown from '../../../../../assets/img/header-arrow-down.svg';
+import bookIcon from '../../../../../assets/img/header-drop-book.svg';
+import paymentIcon from '../../../../../assets/img/header-drop-payment.svg';
+import userIcon from '../../../../../assets/img/header-drop-user.svg';
+import phoneIcon from '../../../../../assets/img/header-drop-phone.svg';
+import logoutIcon from '../../../../../assets/img/header-drop-logout.svg';
+import './_header-dropdown.scss';
 
 export const HeaderDropdown: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -22,7 +22,7 @@ export const HeaderDropdown: React.FC = () => {
         src={arrowDown}
         alt="Arrow down"
       />
-      <div className={showDropdown ? "header-drop--active" : "header-drop"}>
+      <div className={showDropdown ? 'header-drop--active' : 'header-drop'}>
         <div className="header-drop__top">
           <div className="header-user__pfp header-drop__pfp">Sh</div>
           <div className="header-user__name header-drop__name">

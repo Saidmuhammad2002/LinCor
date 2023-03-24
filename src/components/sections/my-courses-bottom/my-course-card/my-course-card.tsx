@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import playIcon from "../../../../assets/img/my-course-play.svg";
-import "./_my-course-card.scss";
+import { Link } from 'react-router-dom';
+import playIcon from '../../../../assets/img/my-course-play.svg';
+import './_my-course-card.scss';
 
 export const MyCourseCard: React.FC<{ expired: boolean }> = ({ expired }) => {
   return (
@@ -32,9 +32,9 @@ export const MyCourseCard: React.FC<{ expired: boolean }> = ({ expired }) => {
         </div>
         <Link
           className="mc-card__link"
-          to={`${expired ? "/course/buy?courseId" : "/course"}`}
+          to={`${expired ? '/course/buy?courseId' : '/course'}`}
         >
-          {expired ? "Sotib olish" : "Boshlash"}
+          {expired ? 'Sotib olish' : 'Boshlash'}
         </Link>
       </div>
     </div>

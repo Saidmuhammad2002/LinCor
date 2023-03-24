@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "./_course-card.scss";
+import { Link } from 'react-router-dom';
+import './_course-card.scss';
 
 interface props {
   course: {

@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .login__resend-wrapper {
   display: flex;
@@ -11,7 +11,7 @@
   border: none;
   margin: 0;
   padding: 0;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   @include font(400, 16px, 24px, $main-blue);
   cursor: pointer;
 

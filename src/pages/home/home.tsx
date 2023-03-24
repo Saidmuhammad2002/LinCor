@@ -9,8 +9,8 @@ import {
   OurCenter,
   Teachers,
   Tips,
-} from "../../components";
-import "./_home.scss";
+} from '../../components';
+import './_home.scss';
 
 export const Home: React.FC = () => {
   return (

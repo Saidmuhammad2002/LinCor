@@ -3,28 +3,47 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author": "GuyTheDeveloper",
+  "author": "Lincor team",
+  "engines": {
+    "node": ">=14.17.0",
+    "yarn": ">=1.22.0",
+    "npm": "please use yarn"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "axios": "^1.3.3",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.3",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
+    "react-toastify": "^9.1.1",
     "sass": "^1.58.3",
     "swiper": "^9.0.5",
-    "yup": "^1.0.2"
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.6",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }

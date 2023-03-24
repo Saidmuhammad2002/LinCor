@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables";
+@import '../../../../assets/scss/variables';
 
 .header {
   position: sticky;
@@ -6,7 +6,7 @@
   background-color: #ffffff;
   z-index: 10000;
 
-  &-wrapper {
+  &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@
   }
 
   &__logo {
-    font-family: "Russo One";
+    font-family: 'Russo One';
     @include font(400, 24px, 24px, #0550e0);
   }
 
@@ -33,7 +33,7 @@
     gap: 28px;
 
     &__link {
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(400, 16px, 16px, #1a1a1a);
       text-transform: capitalize;
     }
@@ -46,7 +46,7 @@
     padding: 12px 61px;
     background-color: #fa391f;
     border-radius: 30px;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 16px, 16px, #ffffff);
     text-transform: capitalize;
   }

@@ -1,9 +1,5 @@
-import "./_line.scss";
+import './_line.scss';
 
 export const Line: React.FC = () => {
-  return (
-    <div className="container">
-      <div className="line"></div>
-    </div>
-  );
+  return <div className="line"></div>;
 };

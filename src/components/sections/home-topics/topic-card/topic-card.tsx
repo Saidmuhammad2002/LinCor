@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import playerIcon from "../../../../assets/img/hero-player.svg";
-import "./_topic-card.scss";
+import { Link } from 'react-router-dom';
+import playerIcon from '../../../../assets/img/hero-player.svg';
+import './_topic-card.scss';
 
 interface props {
   topic: {

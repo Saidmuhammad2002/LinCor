@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables";
+@import '../../../../assets/scss/variables';
 
 .footer {
   padding-bottom: 40px;
@@ -36,7 +36,7 @@
 
   &__logo {
     margin: 0 0 12px;
-    font-family: "Russo One";
+    font-family: 'Russo One';
     @include font(400, 24px, 32px, $main-blue);
   }
 
@@ -47,7 +47,7 @@
 
     &__heading {
       margin: 0 0 8px;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(700, 24px, 24px, #1a1a1a);
       text-transform: capitalize;
       color: #1a1a1a;
@@ -56,12 +56,12 @@
     &__text {
       max-width: 204px;
       margin: 0 0 8px;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(400, 14px, 24px, $secondary-black);
     }
 
     &__link {
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(400, 16px, 24px, $secondary-black);
       text-transform: capitalize;
     }
@@ -83,7 +83,7 @@
 
     &__text {
       margin: 0;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       @include font(500, 16px, 24px, $secondary-black);
       text-transform: capitalize;
     }

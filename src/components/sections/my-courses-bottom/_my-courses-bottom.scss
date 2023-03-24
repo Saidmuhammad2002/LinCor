@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .mc__bottom {
   margin-bottom: 150px;
@@ -13,14 +13,14 @@
     position: relative;
     padding: 0 0 20px;
     background-color: transparent;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 20px, 16px, #000000);
     border: none;
     cursor: pointer;
     transition: all 120ms linear;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: -1px;

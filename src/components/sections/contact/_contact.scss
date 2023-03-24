@@ -1,10 +1,10 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .contact-section {
   &-wrapper {
     padding: 64px 0 78px 40px;
     background: {
-      image: url("../../../assets/img/contact-girl.png");
+      image: url('../../../assets/img/contact-girl.png');
       repeat: no-repeat;
       size: auto;
       position: right 92px bottom;
@@ -15,7 +15,7 @@
 
   &__heading {
     margin: 0 0 40px;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(700, 56px, 64px, $white);
   }
 
@@ -28,7 +28,7 @@
   &__input {
     padding: 14px 0 14px 16px;
     background-color: #4a86fa;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 12px, 12px, $white);
     border: none;
     border-radius: 12px;
@@ -68,7 +68,7 @@
   &__btn {
     padding: 14px 0;
     background-color: $white;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(500, 16px, 16px, #0550e0);
     border: none;
     border-radius: 12px;

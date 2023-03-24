@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { MyCourseCard } from "./my-course-card";
-import "./_my-courses-bottom.scss";
+import { useState } from 'react';
+import { MyCourseCard } from './my-course-card';
+import './_my-courses-bottom.scss';
 
 export const MyCoursesBottom: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"bought" | "expired">("bought");
+  const [activeTab, setActiveTab] = useState<'bought' | 'expired'>('bought');
 
   return (
     <div className="my-course-bottom mc__bottom">
@@ -11,9 +11,9 @@ export const MyCoursesBottom: React.FC = () => {
         <ul className="mc__bottom__list">
           <li className="mc__bottom__item">
             <button
-              onClick={() => setActiveTab("bought")}
+              onClick={() => setActiveTab('bought')}
               className={`mc__bottom__btn ${
-                activeTab === "bought" ? "mc__bottom__btn--active" : ""
+                activeTab === 'bought' ? 'mc__bottom__btn--active' : ''
               }`}
             >
               Sotib olingan kurslar
@@ -21,9 +21,9 @@ export const MyCoursesBottom: React.FC = () => {
           </li>
           <li className="mc__bottom__item">
             <button
-              onClick={() => setActiveTab("expired")}
+              onClick={() => setActiveTab('expired')}
               className={`mc__bottom__btn ${
-                activeTab === "expired" ? "mc__bottom__btn--active" : ""
+                activeTab === 'expired' ? 'mc__bottom__btn--active' : ''
               }`}
             >
               Avval sotib olingan kurslar
@@ -33,10 +33,10 @@ export const MyCoursesBottom: React.FC = () => {
       </div>
       <div className="mc__bottom__bottom">
         {/* {activeTab === "expired" ? <p>siu</p> : null} */}
-        <MyCourseCard expired={activeTab === "expired" ? true : false} />
-        <MyCourseCard expired={activeTab === "expired" ? true : false} />
-        <MyCourseCard expired={activeTab === "expired" ? true : false} />
-        <MyCourseCard expired={activeTab === "expired" ? true : false} />
+        <MyCourseCard expired={activeTab === 'expired' ? true : false} />
+        <MyCourseCard expired={activeTab === 'expired' ? true : false} />
+        <MyCourseCard expired={activeTab === 'expired' ? true : false} />
+        <MyCourseCard expired={activeTab === 'expired' ? true : false} />
       </div>
     </div>
   );

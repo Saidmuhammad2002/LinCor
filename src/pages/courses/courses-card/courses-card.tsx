@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import coursesPlay from "../../../assets/img/courses-play.svg";
-import "./_courses-card.scss";
+import { Link } from 'react-router-dom';
+import coursesPlay from '../../../assets/img/courses-play.svg';
+import './_courses-card.scss';
 
 interface props {
   course?: {

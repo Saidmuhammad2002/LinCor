@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .tips {
   &-wrapper {
@@ -9,7 +9,7 @@
 
   &__heading {
     margin: 0 0 30px;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(800, 56px, 64px, $main-black);
   }
 

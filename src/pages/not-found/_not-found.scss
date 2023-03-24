@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables";
+@import '../../assets/scss/variables';
 
 .not-found {
   display: flex;
@@ -12,7 +12,7 @@
 
   &__heading {
     margin: 0;
-    font-family: "Inter";
+    font-family: 'Inter';
     @include font(700, 48px, 58px, $main-blue);
     letter-spacing: 0.25px;
   }
@@ -27,7 +27,7 @@
   &__links {
     padding: 18.5px 40px;
     background-color: $main-blue;
-    font-family: "Inter";
+    font-family: 'Inter';
     @include font(700, 16px, 19px, $white);
     border: none;
     border-radius: 8px;
@@ -37,7 +37,7 @@
 
   &__status {
     margin: 0;
-    font-family: "Inter";
+    font-family: 'Inter';
     @include font(700, 250px, 303px, $main-blue);
     text-align: center;
     letter-spacing: -0.5px;

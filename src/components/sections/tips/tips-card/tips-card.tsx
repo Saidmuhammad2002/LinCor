@@ -1,4 +1,4 @@
-import "./_tips-card.scss";
+import './_tips-card.scss';
 
 interface props {
   tip: {

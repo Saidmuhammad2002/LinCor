@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .courses-card {
   max-width: 429px;
@@ -15,7 +15,7 @@
   &__description {
     max-width: 326px;
     margin: 8px 0 17px;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 16px, 24px, $main-gray);
 
     &::first-letter {

@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables";
+@import '../../../../assets/scss/variables';
 
 .mc-card {
   flex: 0 0 313px;
@@ -7,7 +7,7 @@
   &__top {
     padding: 156px 0 5px 20px;
     background: {
-      image: url("../../../../assets/img/my-courses-default-bg.svg");
+      image: url('../../../../assets/img/my-courses-default-bg.svg');
       repeat: no-repeat;
       position: center;
       size: auto;

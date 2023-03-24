@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Timer } from "./timer";
-import "./_verify.scss";
+import { useEffect, useState } from 'react';
+import { Timer } from './timer';
+import './_verify.scss';
 
 interface props {
   phone: string;
@@ -8,12 +8,12 @@ interface props {
 }
 
 export const Verify: React.FC<props> = ({ phone, setStep }) => {
-  const [verificationCode, setVerificationCode] = useState<string>("");
+  const [verificationCode, setVerificationCode] = useState<string>('');
 
   //timer logic
   const [expiryTimestamp, setExpiryTimestamp] = useState<number>(
-    parseInt(localStorage.getItem("expiryTimestamp") || "0")
-      ? parseInt(localStorage.getItem("expiryTimestamp") || "0")
+    parseInt(localStorage.getItem('expiryTimestamp') || '0')
+      ? parseInt(localStorage.getItem('expiryTimestamp') || '0')
       : Date.now() + 1 * 60 * 1000
   );
 
@@ -27,12 +27,12 @@ export const Verify: React.FC<props> = ({ phone, setStep }) => {
     };
 
     console.log(code);
-    localStorage.removeItem("expiryTimestamp");
+    localStorage.removeItem('expiryTimestamp');
     setStep();
   };
 
   const handleResendVerificationCode = () => {
-    setVerificationCode("");
+    setVerificationCode('');
     setExpiryTimestamp(Date.now() + 1 * 60 * 1000);
     setTimeExpired(false);
   };
@@ -61,7 +61,7 @@ export const Verify: React.FC<props> = ({ phone, setStep }) => {
           <div className="login__resend-wrapper">
             <button
               className={`login__resend
-                ${timeExpired ? "" : "login__resend--disabled"}
+                ${timeExpired ? '' : 'login__resend--disabled'}
               `}
               disabled={timeExpired ? false : true}
               onClick={handleResendVerificationCode}

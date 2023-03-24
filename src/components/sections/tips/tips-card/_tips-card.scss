@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables";
+@import '../../../../assets/scss/variables';
 
 .tips-card {
   max-width: 360px;
@@ -14,7 +14,7 @@
 
   &__heading {
     margin: 0;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(600, 18px, 20px, $secondary-black);
   }
 
@@ -24,7 +24,7 @@
   }
 
   &__item {
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 16px, 24px, $secondary-black);
   }
 

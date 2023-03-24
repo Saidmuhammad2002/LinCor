@@ -1,4 +1,4 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
 
 .teachers {
   &-wrapper {
@@ -16,14 +16,14 @@
 
   &__heading {
     margin: 0;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(700, 56px, 64px, #1a1a1a);
   }
 
   &__text {
     max-width: 339px;
     margin: 24px 0 0;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(400, 18px, 24px, #5c5c5c);
   }
 
@@ -35,7 +35,7 @@
     gap: 5px;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -65,7 +65,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Poppins";
+    font-family: 'Poppins';
     @include font(600, 32px, 32px, #fafafa);
     z-index: 2;
   }

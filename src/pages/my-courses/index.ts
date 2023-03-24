@@ -1,1 +1,1 @@
-export * from "./my-courses";
+export * from './my-courses';
