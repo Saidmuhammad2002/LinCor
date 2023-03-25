@@ -1,25 +1,36 @@
 {
   "extends": [
+    "plugin:react-hooks/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "eslint-config-prettier"
+    "prettier/@typescript-eslint"
   ],
+  "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
       "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src/",
+          "src/components",
+          "src/pages",
+          "src/assets",
+          "src/utils",
+          "src/app"
+        ],
         "paths": ["src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   },
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
   }
 }

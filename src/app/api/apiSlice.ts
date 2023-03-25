@@ -1,7 +1,7 @@
 const BASE_URL = 'https://api.lincor.uz/api/v1';
 
+import type { RootState } from '@app/store';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { RootState } from '../store';
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
   // credentials: "include",

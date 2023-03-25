@@ -1,12 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
+import RequireAuth from '../app/auth/RequireAuth';
 import { MainLayout } from '../components/layouts';
 import { ContactUs, Home, Login, MyCourses, NotFound } from '../pages';
 import {
   RegisterStep1,
   RegisterStep2,
   RegisterStep3,
-} from '../pages/auth/register/steps';
-import RequireAuth from '../pages/auth/RequireAuth';
+} from '../pages/auth/register';
 
 export const router = createBrowserRouter([
   {

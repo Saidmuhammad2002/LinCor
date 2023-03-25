@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './_not-found.scss';
-
 export const NotFound: React.FC = () => {
   return (
     <section className="not-found">

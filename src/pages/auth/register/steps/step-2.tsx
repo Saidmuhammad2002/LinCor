@@ -1,8 +1,8 @@
+import { useSignupWithEmailIdMutation } from '@app/auth/authApiSlice';
+import cls from '@pages/auth/login/login.module.scss';
 import { Form, useNavigate } from 'react-router-dom';
-import { z } from 'zod';
-import { useSignupWithEmailIdMutation } from './../../authApiSlice';
 import { toast } from 'react-toastify';
-import cls from '../../login/_login.module.scss';
+import { z } from 'zod';
 
 export const RegisterStep2: React.FC = () => {
   const navigate = useNavigate();

@@ -1,12 +1,12 @@
+import { useSignupMutation } from '@app/auth/authApiSlice';
+import cls from '@pages/auth/login/login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import { z } from 'zod';
-import { useSignupMutation } from '../../authApiSlice';
 import { toast } from 'react-toastify';
-import cls from '../../login/_login.module.scss';
+import { z } from 'zod';
 
 export const RegisterStep1: React.FC = () => {
   const navigate = useNavigate();
-  const [signup] = useSignupMutation();
+  const [signup, { isLoading }] = useSignupMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -65,6 +65,7 @@ export const RegisterStep1: React.FC = () => {
           <button
             className={`${cls.login__btn} ${cls.register__btn}`}
             type="submit"
+            disabled={isLoading}
           >
             Tasdiqlash
           </button>

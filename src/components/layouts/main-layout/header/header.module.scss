@@ -43,11 +43,12 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 61px;
-    background-color: #fa391f;
+    padding: 12px;
     border-radius: 30px;
+    border: 1px solid #1d68f9;
     font-family: 'Poppins';
-    @include font(400, 16px, 16px, #ffffff);
+
+    @include font(400, 16px, 16px, #1d68f9);
     text-transform: capitalize;
   }
 }

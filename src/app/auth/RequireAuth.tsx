@@ -1,5 +1,5 @@
-import { useLocation, Navigate, Outlet } from 'react-router-dom';
-import useAuth from './../../utils/hooks';
+import { useAuth } from '@utils/hooks';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const RequireAuth = () => {
   let { email } = useAuth();
