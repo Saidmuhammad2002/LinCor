@@ -30,7 +30,7 @@ export const LoginStep1: React.FC = () => {
         <h3 className={cls.login__logo}>LinCor</h3>
         <h2 className={cls.login__heading}>Kirish</h2>
         <span className={cls.login__advice}>Bizga qo’shiling!</span>
-        <Link className={cls.login__link} to="/auth/login">
+        <Link className={cls.login__link} to="/register">
           Ro’yxatdan o’tish
         </Link>
         <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
@@ -51,9 +51,13 @@ export const LoginStep1: React.FC = () => {
               type="password"
               required
             />
-            <span id="none" className={cls.login__retry}>
+            <Link
+              to="/login/password-reset-identify"
+              id="none"
+              className={cls.login__retry}
+            >
               Parolni unutdingizmi?
-            </span>
+            </Link>
           </label>
 
           <button

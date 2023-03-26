@@ -1,21 +1,20 @@
-import { useVerifyEmailMutation } from '@app/auth/authApiSlice';
+import { useResetPasswordVerificationMutation } from '@app/auth/authApiSlice';
 import cls from '@pages/auth/login/login.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-export const LoginStep2: React.FC = () => {
+export const PasswordResetIdentify: React.FC = () => {
   const navigate = useNavigate();
-
-  const [verifyEmail, { isLoading }] = useVerifyEmailMutation();
+  const [verifyEmail, { isLoading }] = useResetPasswordVerificationMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData) as z.infer<typeof formSchema>;
     try {
       await formSchema.parseAsync(data);
-      await verifyEmail(data.key).unwrap();
-      navigate('/');
+      await verifyEmail(data).unwrap();
+      navigate('/login/password-reset');
     } catch (err) {
       toast.error(
         err instanceof z.ZodError
@@ -31,16 +30,15 @@ export const LoginStep2: React.FC = () => {
         <h3 className={cls.login__logo}>LinCor</h3>
         <h2 className={cls.login__heading}>Parolni kitirish</h2>
         <span className={cls.login__advice}>
-          Emailingizga yuborilgan maxfiy kodni kiriting.
+          Parolni unutgan bo’lsangiz emailingiz orqali tiklashingiz mumkun
         </span>
         <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
           <label className={cls.login__label}>
-            Kodni kiriting
+            Emailingiz
             <input
               className={cls.login__controls}
-              name="key"
-              type="number"
-              pattern="[0-9]*"
+              name="email"
+              type="email"
               required
             />
           </label>
@@ -59,5 +57,5 @@ export const LoginStep2: React.FC = () => {
 };
 
 const formSchema = z.object({
-  key: z.string().min(3, 'Key is too short'),
+  email: z.string().email('Invalid email').min(1, 'Email is required'),
 });

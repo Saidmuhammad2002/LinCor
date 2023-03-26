@@ -1,12 +1,13 @@
 import { useValidateEmailMutation } from '@app/auth/authApiSlice';
 import cls from '@pages/auth/login/login.module.scss';
-import { Form, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
 export const RegisterStep2: React.FC = () => {
   const navigate = useNavigate();
-  const [validateEmail, { isLoading, error }] = useValidateEmailMutation();
+  const [validateEmail, { isLoading }] = useValidateEmailMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -32,7 +33,7 @@ export const RegisterStep2: React.FC = () => {
         <span className={cls.login__advice}>
           Emailingizga yuborilgan maxfiy kodni kiriting.
         </span>
-        <Form className={cls.login__form} method="post" onSubmit={handleSubmit}>
+        <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
           <label className={cls.login__label}>
             Kodni kiriting
             <input
@@ -51,7 +52,7 @@ export const RegisterStep2: React.FC = () => {
           >
             Tasdiqlash
           </button>
-        </Form>
+        </form>
       </div>
     </div>
   );

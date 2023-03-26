@@ -1,5 +1,9 @@
-import { LoginStep1, LoginStep2 } from '@/pages/auth/login';
-import { RequireStepValidation } from '@/pages/auth/RequireStepValidation';
+import {
+  LoginStep1,
+  LoginStep2,
+  PasswordReset,
+  PasswordResetIdentify,
+} from '@/pages/auth/login';
 import {
   RegisterStep1,
   RegisterStep2,
@@ -43,10 +47,9 @@ export const router = createBrowserRouter([
   },
   {
     path: 'register',
-    element: <RequireStepValidation path="register" />,
     children: [
       {
-        path: 'step-1',
+        index: true,
         element: <RegisterStep1 />,
       },
       {
@@ -61,10 +64,10 @@ export const router = createBrowserRouter([
   },
   {
     path: 'login',
-    element: <RequireStepValidation path="login" />,
+
     children: [
       {
-        path: 'step-1',
+        index: true,
         element: <LoginStep1 />,
       },
       {
@@ -72,8 +75,12 @@ export const router = createBrowserRouter([
         element: <LoginStep2 />,
       },
       {
-        path: 'step-3',
-        element: <RegisterStep3 />,
+        path: 'password-reset',
+        element: <PasswordReset />,
+      },
+      {
+        path: 'password-reset-identify',
+        element: <PasswordResetIdentify />,
       },
     ],
   },

@@ -30,7 +30,7 @@ export const RegisterStep1: React.FC = () => {
         <h3 className={cls.login__logo}>LinCor</h3>
         <h2 className={cls.login__heading}>Ro’yxatdan o’tish</h2>
         <span className={cls.login__advice}>Bizga qo’shiling!</span>
-        <Link className={cls.login__link} to="/auth/login">
+        <Link className={cls.login__link} to="/login">
           Kirish
         </Link>
         <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
