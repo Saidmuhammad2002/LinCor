@@ -8,7 +8,7 @@ export const RequireStepValidation: React.FC<{ path: string }> = ({ path }) => {
   const currentStep = location.pathname.split('-').pop() || 1;
 
   const content =
-    validatedStep >= currentStep ? (
+    validatedStep >= +currentStep ? (
       <Outlet />
     ) : (
       <Navigate
