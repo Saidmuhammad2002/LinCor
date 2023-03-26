@@ -1,20 +1,20 @@
-import { useSignupMutation } from '@app/auth/authApiSlice';
+import { useLoginMutation } from '@app/auth/authApiSlice';
 import cls from '@pages/auth/login/login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-export const RegisterStep1: React.FC = () => {
+export const LoginStep1: React.FC = () => {
   const navigate = useNavigate();
-  const [signup, { isLoading }] = useSignupMutation();
+  const [login, { isLoading }] = useLoginMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData);
     try {
       await formSchema.parseAsync(data);
-      await signup(data).unwrap();
-      navigate('/register/step-2');
+      await login(data).unwrap();
+      navigate('/login/step-2');
     } catch (err) {
       toast.error(
         err instanceof z.ZodError // you can sow first error only using // err.errors[0].message
@@ -28,10 +28,10 @@ export const RegisterStep1: React.FC = () => {
     <div className={cls.login__wrapper}>
       <div className={cls.login}>
         <h3 className={cls.login__logo}>LinCor</h3>
-        <h2 className={cls.login__heading}>Ro’yxatdan o’tish</h2>
+        <h2 className={cls.login__heading}>Kirish</h2>
         <span className={cls.login__advice}>Bizga qo’shiling!</span>
         <Link className={cls.login__link} to="/auth/login">
-          Kirish
+          Ro’yxatdan o’tish
         </Link>
         <form className={cls.login__form} method="post" onSubmit={handleSubmit}>
           <label className={cls.login__label}>
@@ -51,15 +51,9 @@ export const RegisterStep1: React.FC = () => {
               type="password"
               required
             />
-          </label>
-          <label className={`${cls.login__label} ${cls.register__label}`}>
-            Parolni takrorlang
-            <input
-              className={cls.login__controls}
-              name="confirmPassword"
-              type="password"
-              required
-            />
+            <span id="none" className={cls.login__retry}>
+              Parolni unutdingizmi?
+            </span>
           </label>
 
           <button
@@ -67,7 +61,7 @@ export const RegisterStep1: React.FC = () => {
             type="submit"
             disabled={isLoading}
           >
-            Tasdiqlash
+            Kirish
           </button>
         </form>
       </div>
@@ -75,16 +69,10 @@ export const RegisterStep1: React.FC = () => {
   );
 };
 
-const formSchema = z
-  .object({
-    email: z.string().email('Invalid email').min(1, 'Email is required'),
-    password: z
-      .string()
-      .min(1, 'Password is required')
-      .min(8, 'Password must be at least 8 characters long'),
-    confirmPassword: z.string().min(1, 'Password confirmation is required'),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ['confirmPassword'],
-    message: 'Passwords do not match',
-  });
+const formSchema = z.object({
+  email: z.string().email('Invalid email').min(1, 'Email is required'),
+  password: z
+    .string()
+    .min(1, 'Password is required')
+    .min(8, 'Password must be at least 8 characters long'),
+});

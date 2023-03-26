@@ -13,7 +13,7 @@ const authSlice = createSlice({
       state.token = accessToken;
     },
     setCurrentStep: (state, action) => {
-      const { currentstep } = action.payload;
+      const currentstep = action.payload;
       state.currentStep = currentstep;
     },
     logOut: (state) => {
@@ -22,8 +22,9 @@ const authSlice = createSlice({
   },
 });
 
-export const { setCredentials, logOut } = authSlice.actions;
+export const { setCredentials, logOut, setCurrentStep } = authSlice.actions;
 
 export default authSlice.reducer;
 
 export const selectCurrentToken = (state: RootState) => state.auth.token;
+export const selectCurrentStep = (state: RootState) => state.auth.currentStep;

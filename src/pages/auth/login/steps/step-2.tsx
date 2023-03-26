@@ -1,20 +1,20 @@
-import { useValidateEmailMutation } from '@app/auth/authApiSlice';
+import { useVerifyEmailMutation } from '@app/auth/authApiSlice';
 import cls from '@pages/auth/login/login.module.scss';
 import { Form, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-export const RegisterStep2: React.FC = () => {
+export const LoginStep2: React.FC = () => {
   const navigate = useNavigate();
-  const [validateEmail, { isLoading, error }] = useValidateEmailMutation();
+  const [verifyEmail, { isLoading }] = useVerifyEmailMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData) as z.infer<typeof formSchema>;
     try {
       await formSchema.parseAsync(data);
-      await validateEmail(data.key).unwrap();
-      navigate('/register/step-3');
+      await verifyEmail(data.key).unwrap();
+      navigate('/login/step-3');
     } catch (err) {
       toast.error(
         err instanceof z.ZodError
@@ -28,9 +28,9 @@ export const RegisterStep2: React.FC = () => {
     <div className={cls.login__wrapper}>
       <div className={cls.login}>
         <h3 className={cls.login__logo}>LinCor</h3>
-        <h2 className={cls.login__heading}>Tasdiqlash</h2>
+        <h2 className={cls.login__heading}>Parolni kitirish</h2>
         <span className={cls.login__advice}>
-          Emailingizga yuborilgan maxfiy kodni kiriting.
+          Parolni unutgan bo’lsangiz emailingiz orqali tiklashingiz mumkun
         </span>
         <Form className={cls.login__form} method="post" onSubmit={handleSubmit}>
           <label className={cls.login__label}>
@@ -49,7 +49,7 @@ export const RegisterStep2: React.FC = () => {
             type="submit"
             disabled={isLoading}
           >
-            Tasdiqlash
+            Kirish
           </button>
         </Form>
       </div>

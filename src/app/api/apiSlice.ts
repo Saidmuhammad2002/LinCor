@@ -4,7 +4,7 @@ import type { RootState } from '@app/store';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
-  // credentials: "include",
+  credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
 
@@ -16,7 +16,8 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
+  keepUnusedDataFor: 10000000,
   baseQuery: baseQuery,
-  tagTypes: ['Course'],
+  tagTypes: ['Course', 'Auth'],
   endpoints: (builder) => ({}),
 });

@@ -1,12 +1,14 @@
-import { createBrowserRouter } from 'react-router-dom';
-import RequireAuth from '../app/auth/RequireAuth';
-import { MainLayout } from '../components/layouts';
-import { ContactUs, Home, Login, MyCourses, NotFound } from '../pages';
+import { LoginStep1, LoginStep2 } from '@/pages/auth/login';
+import { RequireStepValidation } from '@/pages/auth/RequireStepValidation';
 import {
   RegisterStep1,
   RegisterStep2,
   RegisterStep3,
-} from '../pages/auth/register';
+} from '@pages/auth/register';
+import { createBrowserRouter } from 'react-router-dom';
+import RequireAuth from '../app/auth/RequireAuth';
+import { MainLayout } from '../components/layouts';
+import { ContactUs, Home, MyCourses, NotFound } from '../pages';
 
 export const router = createBrowserRouter([
   {
@@ -39,17 +41,35 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  { path: 'login', element: <Login /> },
   {
     path: 'register',
+    element: <RequireStepValidation path="register" />,
     children: [
       {
-        index: true,
+        path: 'step-1',
         element: <RegisterStep1 />,
       },
       {
         path: 'step-2',
         element: <RegisterStep2 />,
+      },
+      {
+        path: 'step-3',
+        element: <RegisterStep3 />,
+      },
+    ],
+  },
+  {
+    path: 'login',
+    element: <RequireStepValidation path="login" />,
+    children: [
+      {
+        path: 'step-1',
+        element: <LoginStep1 />,
+      },
+      {
+        path: 'step-2',
+        element: <LoginStep2 />,
       },
       {
         path: 'step-3',
