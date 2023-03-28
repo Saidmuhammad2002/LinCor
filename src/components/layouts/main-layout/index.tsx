@@ -1,16 +1,16 @@
+import { Outlet } from 'react-router-dom';
 import { Footer } from './footer';
 import { Header } from './header';
-import { Outlet } from 'react-router-dom';
 import cls from './main_layout.module.scss';
 
 export const MainLayout: React.FC = () => {
   return (
-    <div className={cls.container}>
+    <div className={cls.main}>
       <Header />
-      <main className="main">
+      <main className={cls.container}>
         <Outlet />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,18 +1,18 @@
-import { selectCurrentToken } from '@app/auth/authSlice';
-import jwtDecode from 'jwt-decode';
-import { useSelector } from 'react-redux';
+import { useGetUserQuery } from '@/app/auth/authApiSlice';
+import { logOut, selectCurrentToken } from '@app/auth/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const useAuth = () => {
   const token = useSelector(selectCurrentToken);
 
-  if (token) {
-    const decoded: any = jwtDecode(token);
-    // TO DO: add type for decoded
-    // TO DO: add more info from token and return it email is not enough
-    const { email, username } = decoded.UserInfo;
+  const dispatch = useDispatch();
+  const logout = () => dispatch(logOut);
+  const { data } = useGetUserQuery();
 
-    return { email, username };
+  if (token) {
+    if (!data) return null;
+    return { ...data, logout };
   }
 
-  return { email: '', username: '' };
+  return null;
 };

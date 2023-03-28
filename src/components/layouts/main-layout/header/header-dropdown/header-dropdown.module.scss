@@ -1,0 +1,220 @@
+@import '../../../../../assets/scss/variables';
+
+.header {
+  &_dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding-right: 20px;
+    background-color: $main-gray;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  &_user__pfp,
+  &_drop__pfp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+    background-color: $secondary-gray;
+    text-transform: capitalize;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  &_user__name,
+  &_user__pfp {
+    font-family: 'Poppins';
+    @include font(500, 16px, 16px, $main-black);
+  }
+
+  &_user__name {
+    margin-right: 36px;
+  }
+
+  &_drop {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    outline: 0;
+    outline-offset: 0;
+    &__overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 101;
+    }
+    &__active {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      z-index: 107;
+      min-width: 360px;
+      padding: 30px 0px 49px 30px;
+      background-color: $main-gray;
+      border: 1px solid $main-gray;
+      box-shadow: 20px 28px 60px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      cursor: default;
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    &__pfp {
+      display: flex;
+      width: 77px;
+      height: 77px;
+      margin: 0;
+      @include font(500, 36px, 48px, #000000);
+      border-radius: 50%;
+      text-transform: capitalize;
+    }
+
+    &__name {
+      margin: 0;
+      @include font(500, 20px, 34px, #000000);
+      text-transform: capitalize;
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 60px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Poppins';
+      @include font(400, 20px, 34px, #000000);
+      text-transform: capitalize;
+
+      & > img {
+        order: -1;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    &_user__name,
+    &_dropdown__arrow {
+      display: none;
+    }
+    &_drop {
+      &__name {
+        @include font(500, 16px, 16px, $main-black);
+      }
+      &__active {
+        min-width: 270px;
+        padding: 20px 0px 40px 20px;
+      }
+      &__top {
+        gap: 20px;
+      }
+      &__pfp {
+        width: 60px;
+        height: 60px;
+        @include font(500, 28px, 28px, #000000);
+      }
+      &__nav {
+        gap: 20px;
+        margin-top: 30px;
+      }
+      &__link {
+        @include font(500, 16px, 16px, #000000);
+      }
+    }
+    &_user__pfp {
+      width: 35px;
+      height: 35px;
+      margin-right: 0;
+    }
+    &_dropdown {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+.login {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 13px 20px;
+  border-radius: 30px;
+  border: 1px solid #1d68f9;
+  font-family: 'Poppins';
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    img {
+      animation: slide-infinite 2s linear infinite;
+    }
+  }
+
+  img {
+    margin-left: 80px;
+    width: 25px;
+  }
+  @keyframes slide-infinite {
+    0% {
+      transform: translateX(-20px);
+    }
+    35% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @include font(500, 16px, 16px, #1d68f9);
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 1110px) {
+  .login {
+    flex-basis: 0;
+  }
+}
+@media screen and (max-width: 950px) {
+  .login {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login {
+    padding: 0;
+    max-width: 40px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    span {
+      display: none;
+    }
+    img {
+      width: 20px;
+      margin-left: 0;
+    }
+  }
+}

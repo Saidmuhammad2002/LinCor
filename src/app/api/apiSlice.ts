@@ -9,14 +9,13 @@ const baseQuery = fetchBaseQuery({
     const token = (getState() as RootState).auth.token;
 
     if (token) {
-      headers.set('authorization', `Bearer ${token}`);
+      headers.set('autharization', token);
     }
     return headers;
   },
 });
 
 export const apiSlice = createApi({
-  keepUnusedDataFor: 10000000,
   baseQuery: baseQuery,
   tagTypes: ['Course', 'Auth'],
   endpoints: (builder) => ({}),

@@ -1,4 +1,4 @@
-import { useCreatProfileMutation } from '@app/auth/authApiSlice';
+import { useCreateProfileMutation } from '@app/auth/authApiSlice';
 import cls from '@pages/auth/login/login.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,7 +6,7 @@ import { z } from 'zod';
 
 export const RegisterStep3: React.FC = () => {
   const navigate = useNavigate();
-  const [create, { isLoading, error }] = useCreatProfileMutation();
+  const [create, { isLoading, error }] = useCreateProfileMutation();
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);

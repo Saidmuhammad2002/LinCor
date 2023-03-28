@@ -4,6 +4,7 @@ import {
   PasswordReset,
   PasswordResetIdentify,
 } from '@/pages/auth/login';
+import { MainLayout } from '@components/layouts/main-layout';
 import {
   RegisterStep1,
   RegisterStep2,
@@ -11,7 +12,6 @@ import {
 } from '@pages/auth/register';
 import { createBrowserRouter } from 'react-router-dom';
 import RequireAuth from '../app/auth/RequireAuth';
-import { MainLayout } from '../components/layouts';
 import { ContactUs, Home, MyCourses, NotFound } from '../pages';
 
 export const router = createBrowserRouter([

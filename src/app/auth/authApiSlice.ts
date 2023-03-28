@@ -1,9 +1,15 @@
 import { apiSlice } from '@app/api/apiSlice';
 import { simpleResponse } from '../types';
-import { setCredentials } from './authSlice';
+import { setCredentials, User } from './authSlice';
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
+    getUser: builder.query<User, void>({
+      query: () => ({
+        url: '/users',
+      }),
+      providesTags: ['Auth'],
+    }),
     signup: builder.mutation({
       query: (credentials) => ({
         url: '/users/registr',
@@ -17,7 +23,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: 'GET',
       }),
     }),
-    creatProfile: builder.mutation({
+    createProfile: builder.mutation({
       query: (credentials) => ({
         url: '/users/registr/create',
         method: 'POST',
@@ -26,7 +32,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(id, { dispatch, queryFulfilled }) {
         const { data } = await queryFulfilled;
-        dispatch(setCredentials(data));
+
+        dispatch(setCredentials({ token: data }));
       },
     }),
 
@@ -38,7 +45,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         responseHandler: (response) => response.text(), //bckend send text format
       }),
     }),
-    verifyEmail: builder.mutation<simpleResponse, string>({
+    verifyEmail: builder.mutation({
       query: (id) => ({
         url: `/users/login/email/${id}`,
         method: 'GET',
@@ -47,7 +54,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
 
       async onQueryStarted(id, { dispatch, queryFulfilled }) {
         const { data } = await queryFulfilled;
-        if (data) dispatch(setCredentials({ accessToken: data }));
+        if (data) dispatch(setCredentials({ token: data }));
       },
     }),
 
@@ -74,10 +81,11 @@ export const {
   useLoginMutation,
   useSignupMutation,
   useValidateEmailMutation,
-  useCreatProfileMutation,
+  useCreateProfileMutation,
   useVerifyEmailMutation,
   useResetPasswordVerificationMutation,
   useResetPasswordMutation,
+  useGetUserQuery,
 } = authApiSlice;
 
 // type EndpointKey = keyof typeof authApiSlice.endpoints;
