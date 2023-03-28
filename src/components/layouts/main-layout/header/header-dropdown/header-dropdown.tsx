@@ -61,14 +61,10 @@ export const HeaderDropdown: React.FC = () => {
               A'loqa
               <img src={phoneIcon} width={20} height={20} alt="" />
             </Link>
-            <Link
-              to="/"
-              className={cls.header_drop__link}
-              onClick={user.logout}
-            >
+            <div className={cls.header_drop__link} onClick={user.logout}>
               Chiqish
               <img src={logoutIcon} width={20} height={20} alt="" />
-            </Link>
+            </div>
           </div>
         </div>
       </div>

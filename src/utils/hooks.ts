@@ -6,7 +6,7 @@ export const useAuth = () => {
   const token = useSelector(selectCurrentToken);
 
   const dispatch = useDispatch();
-  const logout = () => dispatch(logOut);
+  const logout = () => dispatch(logOut());
   const { data } = useGetUserQuery();
 
   if (token) {
